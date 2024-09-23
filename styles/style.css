@@ -1,0 +1,31 @@
+html {
+    background-color: red;
+}
+
+#titre-principal {
+    text-align: center;
+}
+
+#titre-principal h1{
+    color: white;
+    font-size: 250% ;
+}
+
+#bouton {
+    text-align: center;
+}
+
+#bouton .material-symbols-outlined{
+    font-size: 400%;
+}
+
+#chrono {
+    text-align: center;
+    font-size: 300%;
+    background-color: gray;
+    margin-bottom: 10%;
+    border-radius: 100%;
+    background-color: white;
+    border-color: black;
+    text-decoration:;
+}
