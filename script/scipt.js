@@ -1,23 +1,30 @@
 let intervalle;
-let seconde = 0;
+let seconde = 25*60;
 
-document.getElementsByClassName("material-symbols-outlined").addEventListener("click", function () {
+document.getElementById("timer").addEventListener("click", function () {
     if (intervalle) {
         clearInterval(intervalle);
     }
-    seconde = 0;
-    document.getElementById("chrono").textContent = "00:00:00";
+    seconde = 25*60;
+    document.getElementById("chrono").textContent = "25:00";
     intervalle = setInterval(updateTimer, 1000);
 });
 
 function updateTimer() {
-    seconde++;
+    seconde--;
     let hrs = Math.floor(seconde / 3600);
     let mins = Math.floor((seconde % 3600) / 60);
     let secs = seconde % 60;
 
     document.getElementById("chrono").textContent =
-        (hrs < 10 ? "0" + hrs : hrs) + ":" +
         (mins < 10 ? "0" + mins : mins) + ":" +
         (secs < 10 ? "0" + secs : secs);
+
+    if(seconde == 0){
+        timerRepos();
+    }
+}
+
+function timerRepos(){
+    seconde = 5*60;
 }
