@@ -1,24 +1,24 @@
 let intervalle;
-let seconde = 25*60;
+let seconde = 10;
+let secondeDepart = seconde;
 
-document.getElementById("timer").addEventListener("click", function () {
+document.getElementById("play").addEventListener("click", function () {
     if (intervalle) {
         clearInterval(intervalle);
     }
-    seconde = 25*60;
-    document.getElementById("chrono").textContent = "25:00";
     intervalle = setInterval(updateTimer, 1000);
 });
 
 function updateTimer() {
     seconde--;
-    let hrs = Math.floor(seconde / 3600);
     let mins = Math.floor((seconde % 3600) / 60);
     let secs = seconde % 60;
 
-    document.getElementById("chrono").textContent =
+    document.getElementById("chronoc").textContent =
         (mins < 10 ? "0" + mins : mins) + ":" +
         (secs < 10 ? "0" + secs : secs);
+    
+    document.getElementById("chronoc").style.strokeDashoffset = seconde/secondeDepart * document.getElementById("chronoc").style.strokeDasharray +"px";
 
     if(seconde == 0){
         timerRepos();
@@ -26,5 +26,14 @@ function updateTimer() {
 }
 
 function timerRepos(){
-    seconde = 5*60;
+    seconde = 60;
+
+    document.getElementById("chronoc").textContent = 
+
+    mins = Math.floor((seconde % 3600) / 60);
+    secs = seconde % 60;
+
+    document.getElementById("chronoc").textContent =
+        (mins < 10 ? "0" + mins : mins) + ":" +
+        (secs < 10 ? "0" + secs : secs);
 }

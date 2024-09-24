@@ -22,9 +22,14 @@ html {
 #chrono {
     text-align: center;
     font-size: 300%;
-    background-color: gray;
     margin-bottom: 10%;
-    border-radius: 100%;
-    background-color: white;
-    border-color: black;
+    shape-outside: circle(50%);
+    text-decoration: circle(50%);
+    color: aliceblue;
+}
+
+#chronoc {
+    text-align: center;
+    background-color: black;
+    clip-path: circle(100%);
 }
