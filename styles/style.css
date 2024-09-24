@@ -33,3 +33,20 @@ html {
     background-color: black;
     clip-path: circle(100%);
 }
+
+#progress-bar {
+    stroke:#ff0000;
+    stroke-width:6px;
+    stroke-linecap: round;
+    fill:transparent;
+    stroke-dasharray:471;
+    stroke-dashoffset: 0;
+}
+
+#progress {
+    fill:transparent;
+    stroke:#b0b0b0;
+    stroke-width:11;
+    stroke-dasharray:471;
+    stroke-dashoffset:0;
+}
