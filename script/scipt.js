@@ -13,7 +13,7 @@ document.getElementById("play").addEventListener("click", function () {
 });
 
 function travailTimer(){
-    seconde = 10;
+    seconde = 1200;
     secondeDepart = seconde;
     if (intervalle) {
         clearInterval(intervalle);
@@ -36,7 +36,7 @@ function updateTimer() {
     progressElement.style.strokeDashoffset = circleLength * (1 - progress);  // Update offset
 
     if (seconde == 0 && myBool == true) {
-        seconde = 20;
+        seconde = 300;
         secondeDepart = seconde;
         document.querySelector("html").style.backgroundColor = "green";
         myBool = false;

@@ -23,8 +23,6 @@ html {
     text-align: center;
     font-size: 300%;
     margin-bottom: 10%;
-    shape-outside: circle(50%);
-    text-decoration: circle(50%);
     color: aliceblue;
 }
 
