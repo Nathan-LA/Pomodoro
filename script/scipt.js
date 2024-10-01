@@ -10,9 +10,9 @@ let phaseTravail = true;
 
 document.getElementById("play").addEventListener("click", function () {
     travailTimer();
-    if ( document.getElementById("play").textContent == "play_arrow" ){
+    if ( document.getElementById("play").textContent == "play_arrow" ){ // On regarde si le bouton est celui qui lance le timer et on le change
         document.getElementById("play").textContent = "pause";
-    } else if (document.getElementById("play").textContent == "pause") {
+    } else if (document.getElementById("play").textContent == "pause") { // On regarde si le bouton est celui qui arrete le timer et on le change en arretant le chrono
         clearInterval(intervalle);
         document.getElementById("play").textContent = "play_arrow";
     }
