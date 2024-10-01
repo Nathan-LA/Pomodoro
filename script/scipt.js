@@ -1,5 +1,5 @@
 let intervalle;
-let seconde = 1500;
+let seconde;
 let secondeDepart;
 let progressElement;
 let circleLength;
@@ -11,10 +11,17 @@ let phaseTravail = true;
 document.getElementById("play").addEventListener("click", function () {
     travailTimer();
     if ( document.getElementById("play").textContent == "play_arrow" ){ // On regarde si le bouton est celui qui lance le timer et on le change
-        document.getElementById("play").textContent = "pause";
-    } else if (document.getElementById("play").textContent == "pause") { // On regarde si le bouton est celui qui arrete le timer et on le change en arretant le chrono
+        document.getElementById("play").textContent = "replay";
+    } else if (document.getElementById("play").textContent == "replay") { // On regarde si le bouton est celui qui arrete le timer et on le change en arretant le chrono
         clearInterval(intervalle);
         document.getElementById("play").textContent = "play_arrow";
+        mins = Math.floor((seconde % 3600) / 60);
+        secs = seconde % 60;
+
+        document.getElementById("chronoc").textContent =
+            (mins < 10 ? "0" + mins : mins) + ":" +
+            (secs < 10 ? "0" + secs : secs);
+            progressElement.style.strokeDashoffset = 0;
     }
 });
 
@@ -22,6 +29,11 @@ document.getElementById("play").addEventListener("click", function () {
  * Cette fonction lance le timer dpomodoro en declenchant un intervalle
  */
 function travailTimer(){
+    if( phaseTravail == true ){
+        seconde = 1500;
+    } else {
+        seconde = 300;
+    }
     secondeDepart = seconde;
     if (intervalle) {
         clearInterval(intervalle);
